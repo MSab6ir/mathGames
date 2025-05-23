@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/index.css" />
+		<title>Math Game</title>
+	</head>
+	<body>
+		<div class="menuContainer">
+			<h1>Math Games</h1>
+			<button class="menuButton" onclick="menu(0)">Term</button>
+			<div class="termForm form">
+				<span onclick="setup(0, 2)">2</span>
+				<span onclick="setup(0, 3)">3</span>
+				<span onclick="setup(0, 4)">4</span>
+			</div>
+			<button class="menuButton" onclick="menu(1)">Range</button>
+			<div class="rangeForm form">
+				<input
+					type="range"
+					min="5"
+					max="100"
+					value="10"
+					id="rangeSlider"
+					oninput="rangeAct()" />
+				<span id="rangeValue">10</span>
+				<span onclick="setup(1, 10)">ok</span>
+			</div>
+			<button class="menuButton" onclick="menu(2)">Operator</button>
+			<div class="operatorForm form">
+				<span onclick="setup(2,0)">+</span>
+				<span onclick="setup(2,1)">-</span>
+				<span onclick="setup(2,2)">×</span>
+				<span onclick="setup(2,3)">÷</span>
+			</div>
+			<button class="menuButton" onclick="menu(3)">Round</button>
+			<div class="roundForm form">
+				<span onclick="setup(3,5)">5</span>
+				<span onclick="setup(3,10)">10</span>
+				<span onclick="setup(3,15)">15</span>
+				<span onclick="setup(3,20)">20</span>
+			</div>
+			<br />
+			<button class="menuButton" onclick="play()">Play</button>
+			<div class="error form">Setup First</div>
+		</div>
+		<div class="boardContainer">
+			<div class="header">
+				<span onclick="home()">
+					<img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" />
+				</span>
+				<span>
+					<img src="https://cdn-icons-png.flaticon.com/512/571/571736.png" />
+				</span>
+			</div>
+			<div class="expression">Expression</div>
+			<div class="result">
+				<div class="feedBack"></div>
+				<!-- countdown svg -->
+				<div class="timer-wrapper">
+					<div class="timer">
+						<span id="time">Start</span>
+						<svg class="progress-ring" width="120" height="120">
+							<circle class="progress-ring__circle" cx="60" cy="60" r="54" />
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="inputSection">
+				<input class="input" type="number" placeholder="Answer" disabled />
+				<img
+					onclick="keypress('×')"
+					src="https://cdn-icons-png.flaticon.com/512/4209/4209885.png" />
+				<input onclick="keypress('>')" type="submit" class="enter" />
+				<button onclick="play()" class="next">Next</button>
+				<button onclick="keypress(1)">1</button>
+				<button onclick="keypress(2)">2</button>
+				<button onclick="keypress(3)">3</button>
+				<button onclick="keypress(4)">4</button>
+				<button onclick="keypress(5)">5</button>
+				<button onclick="keypress(6)">6</button>
+				<button onclick="keypress(7)">7</button>
+				<button onclick="keypress(8)">8</button>
+				<button onclick="keypress(9)">9</button>
+				<button onclick="keypress(0)">0</button>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
